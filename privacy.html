@@ -5,19 +5,29 @@
 <header class="wrap top"><a class="brand" href="./">Dedupe & Match</a><nav><a href="./#pricing">Pricing</a><a href="support.html">Support</a></nav></header>
 <main class="wrap doc">
 <h1>Privacy Policy</h1>
-<p class="small">Last updated: November 16, 2026</p>
+<p class="small">Last updated: November 18, 2026</p>
 <p>Dedupe & Match is a Google Sheets™ add-on made by Myzles ("we"). This policy explains what the add-on can access, what it does with it, and what it never does.</p>
 
-<h2>What the add-on accesses</h2>
+<h2>What the add-on accesses, scope by scope</h2>
+<p>Dedupe &amp; Match asks for exactly three Google permissions. This is what each one reaches, and nothing more:</p>
 <ul>
-<li><b>The spreadsheet you open it in.</b> The add-on asks only for permission to view and manage the spreadsheet it is used in (<code>spreadsheets.currentonly</code>). It cannot see your other spreadsheets, your Drive, your email or your contacts.</li>
-<li><b>Showing its sidebar and dialogs</b> inside Google Sheets™ (<code>script.container.ui</code>).</li>
-<li><b>Connecting to an outside service</b> (<code>script.external_request</code>), used only to check a license key with our payment provider, Polar.</li>
+<li><b><code>https://www.googleapis.com/auth/spreadsheets.currentonly</code></b> (view and manage the spreadsheet the add-on is used in): the cell values, tab names and formatting of the one spreadsheet you open the add-on in. It is used to read the rows you choose to check, and to write results back: a new results tab, highlights, a status column, merged rows or removed duplicate rows. It cannot open any other spreadsheet, your Drive, Gmail, contacts or calendar.</li>
+<li><b><code>https://www.googleapis.com/auth/script.container.ui</code></b> (display content in sidebars and dialogs): no user data. It lets the add-on show its sidebar, where you pick columns and actions, and its formula help dialog inside Google Sheets™.</li>
+<li><b><code>https://www.googleapis.com/auth/script.external_request</code></b> (connect to an external service): used for one request only, an HTTPS call to our payment provider Polar (api.polar.sh) to check a license key you paste into the sidebar. The request contains only that key and our organization ID. No spreadsheet data, email address or other Google user data is sent.</li>
 </ul>
 
 <h2>How your data is used</h2>
 <p>All matching runs inside Google Apps Script™, on Google's servers, under your own Google account. Spreadsheet contents are read only to find duplicates, compare tabs or look up matches, and results are written back to your spreadsheet. We never receive, store, sell or share your spreadsheet data. Nothing from your sheet is sent to us or to anyone else.</p>
 <p>Your sidebar settings (which columns you chose, how strict matching should be) are saved in the spreadsheet's own add-on storage so they are there next time. If you enter a license key, it is saved in your Google account's add-on storage and sent to Polar (polar.sh) to confirm it is valid. No other information goes with it.</p>
+
+<h2>How your data is protected</h2>
+<p>All processing runs inside Google Apps Script™ on Google's servers, and every connection uses HTTPS. Your spreadsheet data is never copied to our servers (we have none that receive it). The only outside call is the HTTPS license check to Polar described above, which sends only the license key. The add-on does not log Google user data: it writes no spreadsheet contents to logs, analytics or third-party services.</p>
+
+<h2>Retention and deletion</h2>
+<p>The add-on keeps no spreadsheet data after a run finishes; results exist only in your own spreadsheet, where you can edit or delete them. Very large jobs keep a temporary progress marker in Apps Script's cache for up to one hour, and it is removed when the job ends. A few small settings stay in Apps Script properties until you uninstall the add-on or clear them: your license key and whether the one-time rating prompt was shown (user properties), and your column and matching choices for each tab (document properties of that spreadsheet). Polar keeps order records under its own privacy policy; we delete the order details we hold within 30 days of an email request to the address below.</p>
+
+<h2>AI and machine learning</h2>
+<p>Google user data is never used to develop, train or improve AI or machine-learning models, and it is never sent to any AI service. Matching uses plain, deterministic rules written in the add-on's own code.</p>
 
 <h2>Payments</h2>
 <p>Purchases are handled by Polar Software Inc. as merchant of record. Polar collects your name, email and payment details under its own privacy policy (polar.sh/legal/privacy). We receive your email address and order details from Polar so we can provide support.</p>
